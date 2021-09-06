@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.jcg.springboot.aws.s3</groupId>
+	<artifactId>SpringbootS3tutorial</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>Springboot and AWS S3 tutorial</name>
+	<description>A tutorial to illustrate the springboot and aws s3 interactions</description>
+
+	<properties>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>${maven.compiler.target}</maven.compiler.source>
+		<aws-java-sdk.version>1.11.750</aws-java-sdk.version>
+	</properties>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.5.RELEASE</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- Aws dependency. -->
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk</artifactId>
+			<version>${aws-java-sdk.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>SpringbootS3tutorial</finalName>
+		<!-- To make spring boot as a fat jar so that all required jar files and 
+			main file is added for running the code from Docker. -->
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>

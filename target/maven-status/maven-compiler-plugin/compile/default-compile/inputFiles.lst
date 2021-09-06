@@ -1,0 +1,5 @@
+/home/jamshi/Project/UK/Spring-boot-and-AWS-S3-Upload-file/SpringbootS3tutorial/src/main/java/org/jcg/springboot/aws/s3/serv/AWSS3Service.java
+/home/jamshi/Project/UK/Spring-boot-and-AWS-S3-Upload-file/SpringbootS3tutorial/src/main/java/org/jcg/springboot/aws/s3/config/AWSS3Config.java
+/home/jamshi/Project/UK/Spring-boot-and-AWS-S3-Upload-file/SpringbootS3tutorial/src/main/java/org/jcg/springboot/aws/s3/serv/AWSS3ServiceImpl.java
+/home/jamshi/Project/UK/Spring-boot-and-AWS-S3-Upload-file/SpringbootS3tutorial/src/main/java/org/jcg/springboot/aws/s3/ctrl/AWSS3Ctrl.java
+/home/jamshi/Project/UK/Spring-boot-and-AWS-S3-Upload-file/SpringbootS3tutorial/src/main/java/org/jcg/springboot/aws/s3/SpringbootS3tutorial.java
