@@ -31,11 +31,11 @@ public class AWSS3ServiceImpl implements AWSS3Service {
 	// @Async annotation ensures that the method is executed in a different background thread 
 	// but not consume the main thread.
 	@Async
-	public void uploadFile(final MultipartFile multipartFile) {
-		LOGGER.info("File upload in progress.");
+	public void uploadFile(final MultipartFile multipartFile, String strName) {
+		LOGGER.info("File upload in progress."+ strName);
 		try {
 			final File file = convertMultiPartFileToFile(multipartFile);
-			uploadFileToS3Bucket(bucketName, file);
+			uploadFileToS3Bucket(bucketName, file ,strName );
 			LOGGER.info("File upload is completed.");
 			file.delete();	// To remove the file locally created in the project folder.
 		} catch (final AmazonServiceException ex) {
@@ -54,10 +54,10 @@ public class AWSS3ServiceImpl implements AWSS3Service {
 		return file;
 	}
 
-	private void uploadFileToS3Bucket(final String bucketName, final File file) {
+	private void uploadFileToS3Bucket(final String bucketName, final File file , final String strName) {
 		final String uniqueFileName = LocalDateTime.now() + "_" + file.getName();
 		LOGGER.info("Uploading file with name= " + uniqueFileName);
-		final PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, uniqueFileName, file);
+		final PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, "folder1"+"/"+strName, file);
 		amazonS3.putObject(putObjectRequest);
 	}
 }
